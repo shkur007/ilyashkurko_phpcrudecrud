@@ -1,79 +1,58 @@
 Assignment 7: Host a Web Application Stack on Ubuntu Linux
-This repository contains the work for implementing a LAMP (Linux, Apache, MySQL, PHP) stack on an Ubuntu 24.04 Virtual Machine. This environment replicates the production stack for a Human Resources Employee Database application, enabling consistent local development and testing.
+Description
+This assignment focuses on hosting a LAMP (Linux, Apache, MySQL, PHP) stack on an Ubuntu Linux virtual machine. The goal is to configure a development environment for a Human Resources Application, enabling developers to work on the application locally with a consistent setup.
 
-Overview
-The purpose of this project was to set up a fully functional LAMP stack development environment for the HR Employee Database application. Key tasks included installing and configuring Apache, MariaDB, and PHP, as well as deploying a sample database with 300,000 records.
+Requirements
+Hardware
+Computer capable of running VirtualBox or other hypervisor
+Ubuntu 24.04 Virtual Machine
+Software
+VirtualBox or VMware
+Ubuntu 24.04 Server OS
+Apache2 Web Server
+PHP Programming Language
+MariaDB (MySQL) Database Server
+Key Components
+Part 1: Install Apache2 and PHP
+Install the Apache2 web server.
+Verify Apache is running and accessible via a browser.
+Create a custom index.html page.
+Install PHP and verify its functionality using a test PHP file.
+Part 2: Install MariaDB
+Install and secure MariaDB.
+Create a new MySQL user and configure access.
+Test database functionality by loading a sample dataset (300,000 records from GitHub).
+Part 3: Documentation
+Document your LAMP stack setup with system specifications and instructions.
+Create a block diagram showing the architecture of your setup.
+How to Run
+Clone the Repository
+Ensure all required files are available in your working directory. Clone the repository to access scripts and configuration files.
 
-Features
-VM Configuration:
-Ubuntu 24.04 with 2 vCPUs, 2GB RAM, and 25GB storage.
-Dual network adapters: NAT for internet and Host-Only for local access.
-Apache Web Server:
-Hosted static and dynamic web content.
-MariaDB (MySQL):
-Installed and secured for database management.
-Loaded with a sample HR database for testing.
-PHP Integration:
-Configured to enable server-side scripting and database interaction.
-Custom Web Pages:
-Designed and deployed an HTML home page and PHP scripts to verify functionality.
-Repository Structure
-docs/: Documentation for LAMP stack configuration and deployment.
-www/: Web content and scripts hosted on the server:
-index.html: Custom static home page.
-phptest.php: PHP script for verifying PHP functionality.
-helloworld.php: PHP script displaying "Hello World!".
-sql/: SQL scripts for querying and managing the HR database.
-Setup and Configuration
-1. Virtual Machine Setup
-Configured an Ubuntu 24.04 Virtual Machine with:
-2 vCPUs, 2GB RAM, 25GB storage.
-Networking: NAT and Host-Only adapters.
-2. Apache Installation
-Installed Apache2 to serve web content.
-Verified the default web page using the server's IP address.
-3. PHP Installation
-Installed PHP and required modules.
-Created phptest.php to verify PHP functionality:
-php
-   
-<?php
-phpinfo();
-?>
-4. MariaDB Installation
-Installed MariaDB and secured the database server.
-Created a database user for secure access:
-sql
-   
-CREATE USER 'devuser'@'localhost' IDENTIFIED BY 'password';
-GRANT ALL PRIVILEGES ON *.* TO 'devuser'@'localhost';
-FLUSH PRIVILEGES;
-5. Loading Sample Data
-Cloned the HR database repository:
+bash
+Copy code
+git clone <repository-url>
+cd <repository-folder>
+Setup Apache and PHP
+Follow the provided script or manual instructions to install and configure Apache2 and PHP.
 
-   
-git clone https://github.com/datacharmer/test_db.git
-Imported the database into MariaDB:
-css
-   
-mysql -u devuser -p < employees.sql
-6. Testing and Verification
-Queried the database to confirm data loading:
-sql
-   
-SELECT COUNT(*) FROM employees;
-Created dynamic web pages such as helloworld.php to test PHP and database integration.
-How to Use
-Clone the repository:
+Setup MariaDB
+Use the commands in the assignment to install, secure, and test MariaDB.
 
-   
-git clone https://github.com/your-username/assignment7-lamp-stack
-Follow the setup guide in docs/setup.md for configuring the LAMP stack.
-Copy the contents of the www/ folder to /var/www/html on your server.
-Access the application through the browser using the server’s IP address.
-Technologies Used
-Linux: Operating System for the VM.
-Apache: Web server for hosting applications.
-MariaDB: Database server for managing data.
-PHP: Server-side scripting language.
-VirtualBox: Virtualization platform for creating the VM.
+Verify LAMP Stack
+
+Navigate to the server’s IP address in your browser.
+Test PHP and database connectivity.
+
+Notes
+Ubuntu Setup:
+Ensure your VM has at least 2 GB of RAM, 2 vCPUs, and 25 GB of storage.
+Networking:
+Use both NAT and Host-Only network adapters for connectivity.
+Test URLs:
+http://<vm-ip-address>
+http://<vm-ip-address>/phpinfo.php
+Repository Files
+index.html: Sample homepage for Apache.
+phptest.php: Script to verify PHP installation.
+MariaDB configuration files and SQL samples.
