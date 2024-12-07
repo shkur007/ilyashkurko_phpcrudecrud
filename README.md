@@ -29,8 +29,8 @@ How to Run
 Clone the Repository
 Ensure all required files are available in your working directory. Clone the repository to access scripts and configuration files.
 
-bash
-Copy code
+  
+   
 git clone <repository-url>
 cd <repository-folder>
 Setup Apache and PHP
