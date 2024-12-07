@@ -32,6 +32,7 @@ Document your LAMP stack setup with system specifications and instructions.
 Create a block diagram showing the architecture of your setup.
 
 How to Run
+
 Clone the Repository
 Ensure all required files are available in your working directory. Clone the repository to access scripts and configuration files.
 
